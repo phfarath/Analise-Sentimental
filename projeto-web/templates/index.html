@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Analisador de Sentimento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Análise de Sentimento de Tweets</h2>
+
+        <form method="POST">
+            <textarea name="texto" placeholder="Digite o texto em inglês, ex: i love you, i hate you">{{ texto if texto else '' }}</textarea>
+            <button type="submit">Analisar Sentimento</button>
+            
+            {% if resultado %}
+            <div class="resultado">
+                <p><strong>Sentimento:</strong> {{ resultado }}</p>
+                <p><em>"{{ texto }}"</em></p>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
