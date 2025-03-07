@@ -4,8 +4,8 @@ import joblib
 app = Flask(__name__)
 
 # Carregar modelo e vetorizador treinados
-modelo = joblib.load(".\projeto-web\modelo.pkl")
-vectorizer = joblib.load(".\projeto-web\\vectorizer.pkl")
+modelo = joblib.load("modelo.pkl")
+vectorizer = joblib.load("vectorizer.pkl")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
